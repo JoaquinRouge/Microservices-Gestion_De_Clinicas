@@ -1,7 +1,11 @@
 package com.joaquinrouge.clinics.user.controller;
 
+import com.joaquinrouge.clinics.user.model.Permission;
 import com.joaquinrouge.clinics.user.model.Role;
 import com.joaquinrouge.clinics.user.service.IRoleService;
+
+import java.util.Set;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -45,6 +49,16 @@ public class RoleController {
         }
     }
 
+    @PutMapping("/add/permission/{id}")
+    public ResponseEntity<?> addRoles(@PathVariable Long id,@RequestBody Set<Permission> permissions){
+    	try {
+    		Role role = roleService.addPermissions(id, permissions);
+    		return ResponseEntity.ok(role);
+    	}catch(IllegalArgumentException e) {
+    		return ResponseEntity.badRequest().body(e.getMessage());
+    	}
+    }
+    
     @PutMapping("/update")
     public ResponseEntity<?> update(@RequestBody Role role) {
         try {

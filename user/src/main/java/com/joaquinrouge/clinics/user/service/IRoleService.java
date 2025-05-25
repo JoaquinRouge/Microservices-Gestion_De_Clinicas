@@ -1,5 +1,8 @@
 package com.joaquinrouge.clinics.user.service;
 
+import java.util.Set;
+
+import com.joaquinrouge.clinics.user.model.Permission;
 import com.joaquinrouge.clinics.user.model.Role;
 
 public interface IRoleService {
@@ -9,5 +12,5 @@ public interface IRoleService {
 	Role createRole(Role role);
 	void deleteRole(Long id);
 	Role updateRole(Role role);
-	
+	Role addPermissions(Long id,Set<Permission> permissions);
 }

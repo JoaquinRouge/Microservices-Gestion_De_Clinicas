@@ -27,11 +27,10 @@ public class Role {
     	
     }
 
-	public Role(Long id, String role, Set<Permission> permissions) {
+	public Role(Long id, String role) {
 		super();
 		this.id = id;
 		this.role = role;
-		this.permissions = permissions;
 	}
 
 	public Long getId() {

@@ -17,7 +17,7 @@ public class PermissionService implements IPermissionService{
 	@Override
 	public Permission findById(Long id) {
 		return permRepo.findById(id).orElseThrow(()->
-		new IllegalArgumentException("Permission not found"));
+		new IllegalArgumentException("Permission with id " + id + " not found"));
 	}
 
 	@Override

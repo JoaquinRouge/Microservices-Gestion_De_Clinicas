@@ -70,7 +70,7 @@ public class UserController {
         }
     }
 
-    @PostMapping("/add/roles/{id}")
+    @PutMapping("/add/roles/{id}")
     public ResponseEntity<?> addRoles(@RequestBody Set<Role> roles,@PathVariable Long id){
     	try {
     		userService.addRoles(id, roles);
