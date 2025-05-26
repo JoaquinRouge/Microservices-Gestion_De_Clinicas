@@ -84,8 +84,8 @@ public class UserController {
     public ResponseEntity<?> updateUser(@RequestBody User user) {
         try {
             return ResponseEntity.ok(userService.updateUser(user));
-        } catch (IllegalArgumentException ex) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ex.getMessage());
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
         }
     }
 
