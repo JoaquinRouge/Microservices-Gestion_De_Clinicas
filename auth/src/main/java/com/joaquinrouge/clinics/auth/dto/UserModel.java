@@ -113,7 +113,6 @@ public class UserModel implements UserDetails{
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 	    return roles.stream()
 	            .flatMap(role -> {
-	                // Agregamos tanto el rol como sus permisos
 	                Set<GrantedAuthority> authorities = role.permissions().stream()
 	                        .map(permission -> (GrantedAuthority) () -> permission.permission())
 	                        .collect(Collectors.toSet());
