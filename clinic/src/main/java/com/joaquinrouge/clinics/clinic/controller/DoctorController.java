@@ -65,7 +65,7 @@ public class DoctorController {
     }
 
     @GetMapping("/license/{licenseNumber}")
-    @PreAuthorize("hasRole('ADMIN') or hasRole('RECEPTIONIST')")
+    @PreAuthorize("hasRole('RECEPTIONIST')")
     public ResponseEntity<?> getDoctorByLicenseNumber(@PathVariable String licenseNumber) {
         try {
             return ResponseEntity.ok(doctorService.findByLicenseNumber(licenseNumber));
