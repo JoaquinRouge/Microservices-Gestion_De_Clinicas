@@ -19,7 +19,7 @@ import com.joaquinrouge.clinics.user.model.User;
 import com.joaquinrouge.clinics.user.service.IUserService;
 
 @RestController
-@RequestMapping("/api/users")
+@RequestMapping("/api/user")
 public class UserController {
 
     private final IUserService userService;

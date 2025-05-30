@@ -6,7 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/permissions")
+@RequestMapping("/api/permission")
 public class PermissionController {
 
     private final IPermissionService permissionService;
