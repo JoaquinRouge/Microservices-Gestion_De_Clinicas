@@ -9,7 +9,6 @@ import com.joaquinrouge.clinics.user.model.Role;
 
 @Repository
 public interface IRoleRepository extends JpaRepository<Role, Long>{
-
 	Optional<Role> findByRole(String role);
 	boolean existsByRole(String role);
 }

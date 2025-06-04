@@ -9,6 +9,6 @@ import com.joaquinrouge.clinics.auth.dto.UserModel;
 @FeignClient(name = "USER-SERVICE")
 public interface UserClient {
 	
-	@GetMapping("/api/users/username/{username}")
+	@GetMapping("/api/user/username/{username}")
 	UserModel findByUsername(@PathVariable String username);
 }
