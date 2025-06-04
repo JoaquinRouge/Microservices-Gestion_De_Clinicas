@@ -3,10 +3,13 @@ package com.joaquinrouge.clinics.appointment.service;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.joaquinrouge.clinics.appointment.dto.UpdateAppointmentDto;
 import com.joaquinrouge.clinics.appointment.model.Appointment;
 import com.joaquinrouge.clinics.appointment.repository.IAppointmentRepository;
 
+@Service
 public class AppointmentService implements IAppointmentService {
 
 	private IAppointmentRepository appRepo;
@@ -32,6 +35,12 @@ public class AppointmentService implements IAppointmentService {
 				()-> new IllegalArgumentException("Appointment not found"));
 	}
 
+	@Override
+	public List<Appointment> findByPatientId(Long id){
+		return appRepo.findByPatientId(id).orElseThrow(
+				()-> new IllegalArgumentException("Appointments not found"));
+	}
+	
 	@Override
 	public Appointment createAppointment(Appointment appointment) {
 		

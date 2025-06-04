@@ -11,6 +11,7 @@ public interface IAppointmentService {
 	Appointment findById(Long id);
 	List<Appointment> findAll();
 	List<Appointment> findByDate(LocalDateTime date);
+	List<Appointment> findByPatientId(Long id);
 	Appointment createAppointment(Appointment appointment);
 	void deleteAppointment(Long id);
 	Appointment updateAppointment(UpdateAppointmentDto appointment);
