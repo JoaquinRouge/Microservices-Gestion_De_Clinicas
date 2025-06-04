@@ -66,12 +66,22 @@ public class UserService implements IUserService{
 	}
 
 	@Override
+	/**
+	 * This method disables the account, it does NOT deletes it.
+	 * 
+	 * @param id User id
+	 * 
+	 */
 	public void deleteUser(Long id) {
 		if(!userRepo.existsById(id)) {
 			throw new IllegalArgumentException("User not found");
 		}
 		
-		userRepo.deleteById(id);
+		User userFromDb = findById(id);
+		
+		userFromDb.setEnabled(false);
+		
+		userRepo.save(userFromDb);
 	}
 
 	@Override
