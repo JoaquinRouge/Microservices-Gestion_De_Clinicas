@@ -7,10 +7,12 @@ import com.joaquinrouge.clinics.user.service.IRoleService;
 import java.util.Set;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/role")
+@PreAuthorize("hasRole('RECEPTIONIST')")
 public class RoleController {
 
     private final IRoleService roleService;
